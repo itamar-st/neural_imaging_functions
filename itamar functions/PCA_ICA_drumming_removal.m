@@ -10,9 +10,9 @@ load('C:\Users\itama\Desktop\drumming_cleaning\boro trials with drumming itamar\
 %% load trials
 % plot Fp1 electrode data (sits at front left part of head hear left eye)
 % perturbations can be seen visually due to blinks
-trial_num = 4;
+trial_num = 2;
 % all_regions_avg = plotspconds(condsX1(:,2:180,trial_num:trial_num)-1,100,100,10);
-all_regions = condsX5(:,2:180,trial_num:trial_num)-1;
+all_regions = condsX5(:,2:200,trial_num:trial_num)-1;
 chamberpix_with_square_division = assignBlockIDs(chamberpix);
 % all_regions_avg = all_regions_avg(chamberpix == 0, :);
 all_regions_with_NAN =  all_regions;
@@ -68,7 +68,7 @@ print("components", '-dpng')
 % use heuristic to pick component corresponding to blink
 % Components_blink = pickBlinkComponents(Data_ICA);
 % disp(strcat("Blink component = ", string(Components_blink)))
-Components_blink = [2 8 9 19 21];
+Components_blink = [2 16 19];
 % zero all columns corresponsing to blink components
 Data_ICA_noBlinks = Data_ICA;
 Data_ICA_noBlinks(:,Components_blink) = ...
